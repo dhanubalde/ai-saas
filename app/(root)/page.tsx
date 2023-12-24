@@ -1,10 +1,14 @@
-import { UserButton } from '@clerk/nextjs'
-import Image from 'next/image'
+import LandingNavbar from '@/components/landingNavbar'
+import LangdingHero from '@/components/langdingHero'
+
+
+
 
 export default function Home() {
   return (
-    <div>
-      <UserButton afterSignOutUrl='/sign-in'/>
+    <div className=' h-full'>
+      <LandingNavbar />
+      <LangdingHero />
     </div>
   
   )

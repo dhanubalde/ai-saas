@@ -1,13 +1,16 @@
-"use client"
-interface LayoutProps { 
+interface AuthLayoutProps { 
   children: React.ReactNode
 }
 
-const layout: React.FC<LayoutProps> = ({ children}) => {
+const layout = ({ children}: AuthLayoutProps) => {
   return (
-    <div className="flex items-center justify-center min-h-full">
-      {children}
-    </div>
+   <>
+      <div className="flex flex-col bg-[#111827] items-center justify-center min-h-screen">
+        { children  }
+      </div>
+   
+   </>
+  
   )
 }
 
