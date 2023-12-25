@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Montserrat ({ weight: '600', subsets: ['latin'] });
+
 
 export const metadata: Metadata = {
   title: 'Ai_Saas',
@@ -18,7 +19,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         
           {children}
        

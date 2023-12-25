@@ -9,6 +9,7 @@ export default function Home() {
     <div className=' h-full'>
       <LandingNavbar />
       <LangdingHero />
+      
     </div>
   
   )

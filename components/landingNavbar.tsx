@@ -15,11 +15,11 @@ const LandingNavbar = () => {
     <nav className="p-4 bg-transparent flex items-center justify-between">
       
       <Link href="/" className="flex items-center">
-        <div className=" relative h-82 w-82 mr-4">
-          <Image src="/logo.png" alt="logo" fill/>
+        <div className=" relative h-50 w-50 mr-4">
+          <Image fill src="/chat.png" alt="Logo"/>
         </div>
         <h1 className={cn("text-2xl font-bold text-white") }>
-          Genius
+          Genro_AI
         </h1>
       </Link>
       <div className="flex items-center gap-x-2">

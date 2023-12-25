@@ -5,10 +5,11 @@ import MobileSidebar from "@/components/mobileSidebar"
 
 const Navbar = () => {
   return (
-    <div className=" flex items-center p-4">
+    <div className=" flex items-center p-5">
       <MobileSidebar/>
-      <div className=" flex w-full justify-end">
-        <UserButton afterSignOutUrl="/"/>
+      <div className=" flex w-full justify-end ">
+        <UserButton afterSignOutUrl="/" />
+          
       </div>
     </div>
   )
