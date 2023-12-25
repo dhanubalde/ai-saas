@@ -15,9 +15,9 @@ const LandingNavbar = () => {
     <nav className="p-4 bg-transparent flex items-center justify-between">
       
       <Link href="/" className="flex items-center ">
-        <div className=" relative h-50 w-50 mr-4">
+        {/* <div className=" relative h-50 w-50 mr-4">
           <Image fill src="/logo.png" alt="Logo"/>
-        </div>
+        </div> */}
         <h1 className={cn("text-2xl font-bold text-white") }>
           Genro_AI
         </h1>
