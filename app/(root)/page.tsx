@@ -6,7 +6,7 @@ import LangdingHero from '@/components/langdingHero'
 
 export default function Home() {
   return (
-    <div className=' h-full'>
+    <div className=' h-full pt-4'>
       <LandingNavbar />
       <LangdingHero />
       

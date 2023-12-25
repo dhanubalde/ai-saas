@@ -14,9 +14,9 @@ const LandingNavbar = () => {
   return (
     <nav className="p-4 bg-transparent flex items-center justify-between">
       
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="flex items-center ">
         <div className=" relative h-50 w-50 mr-4">
-          <Image fill src="/chat.png" alt="Logo"/>
+          <Image fill src="/logo.png" alt="Logo"/>
         </div>
         <h1 className={cn("text-2xl font-bold text-white") }>
           Genro_AI
