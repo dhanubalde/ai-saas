@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 
-const DashboardPage = () => {
+const DashboardPage =  () => {
   const router = useRouter()
 
   return (

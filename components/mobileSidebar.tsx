@@ -41,8 +41,8 @@ const MobileSidebar = ({
         side="left"
         className="p-0 text-black">
         <Sidebar
-          isPro={false}
-          apiLimitCount={0}
+          isPro={isPro}
+          apiLimitCount={apiLimitCount}
         />
       </SheetContent>
     </Sheet>

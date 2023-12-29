@@ -1,3 +1,4 @@
+import { ModalProvider } from "@/components/modal-provider"
 import Navbar from "@/components/navbar"
 import Sidebar from "@/components/sidebar"
 
@@ -16,7 +17,7 @@ const Dashboardlayout: React.FC<DashboardLayoutProps> = ({
         <Sidebar isPro={false} apiLimitCount={0}   />
         </div>
       <main className="md:pl-72 pb-10">
-          <Navbar/>
+        <Navbar />
           {children}
       </main>
     </div>
