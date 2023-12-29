@@ -52,6 +52,7 @@ const VedioPage = () => {
         bgColor="bg-orange-700/10"
       />
       <div className=" px-4 lg:px-8">
+        <div>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -89,14 +90,13 @@ const VedioPage = () => {
             </Button>
           </form>
         </Form>
-        {isLoading && (
-          <div className="p-20">
-            <Loader />
+        
+      </div>
+      <div className=' space-y-4 mt-4'>
+          <div className=' rounded-lg border border-neutral-500 w-full h-[30rem]'>
+          <h3 className=' p-2 text-muted-foreground text-xs'>Response...</h3>
           </div>
-        )}
-        {!video && !isLoading && (
-          <Empty label="No video files generated." />
-        )}
+        </div>
       </div>
     </div>
   )

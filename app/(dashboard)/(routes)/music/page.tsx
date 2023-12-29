@@ -46,6 +46,8 @@ const MusicPage = () => {
         iconColor="text-emerald-500"
         bgColor="bg-emerald-500/10"
       />
+    <div className="px-4 lg:px-8">
+     <div>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -84,6 +86,14 @@ const MusicPage = () => {
         </form>
       </Form>
     </div>
+    <div className=' space-y-4 mt-4'>
+         <div className=' rounded-lg border border-neutral-500 w-full h-[30rem]'>
+         <h3 className=' p-2 text-muted-foreground text-xs'>Response...</h3>
+         </div>
+      </div>
+    </div>
+  </div>
+    
   )
 }
 
