@@ -6,6 +6,7 @@ import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, Video
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Separator } from "./ui/separator";
 
 
 const poppins = Montserrat ({ weight: '600', subsets: ['latin'] });
@@ -69,7 +70,8 @@ const Sidebar = ({
   return (
     <div className="
       space-y-4
-      py-4 flex
+      py-4 
+      flex
       flex-col
       h-full
       bg-[#111827]
@@ -81,8 +83,7 @@ const Sidebar = ({
         <Link
           href="/dashboard"
           className="flex items-center pl-3 flex-1 ">
-          <div
-            className="relative h-8 w-8 mr-4">
+          <div className="relative h-8 w-8 mr-4">
             <Image fill alt="Logo" src="/logo.png" />
           </div>
           <h1
@@ -90,8 +91,10 @@ const Sidebar = ({
             Genro_AI
           </h1>
         </Link>
+       
         <div
-          className="space-y-2 pt-8">
+          className="space-y-2 pt-10">
+           <Separator className=" bg-slate-700"/>
           {routes.map((route) => (
             <Link
               key={route.href} 
@@ -109,6 +112,7 @@ const Sidebar = ({
             </Link>
           ))}
         </div>
+        <Separator className=" bg-slate-700"/>
       </div>
       
     </div>

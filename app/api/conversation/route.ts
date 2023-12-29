@@ -19,8 +19,7 @@ export async function POST(
   try {
     const { userId } = auth()
     const body = await req.json()
-    const {messages
-  }  = body;
+    const {messages}  = body;
     
 
     if (!userId) { 
