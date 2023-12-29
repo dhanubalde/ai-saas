@@ -51,6 +51,8 @@ const CodePage = () => {
 
   return (
     <div>
+       <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `/ Code `}</span>
+       <Separator className="px-4 mb-4 py-[0.07rem]"/>
       <Heading
         title="Code Generations"
         description="Generate code using descriptive text."
@@ -58,7 +60,6 @@ const CodePage = () => {
         iconColor="text-green-700"
         bgColor="bg-green-700/10"
       />
-      <Separator className="mb-4 py-[0.05rem]"/>
       <div className=" px-4 lg:px-8">
         <div>
           <Form {...form}>
@@ -83,7 +84,7 @@ const CodePage = () => {
                   <FormItem className=" col-span-12 lg:col-span-10">
                     <FormControl className="m-0 p-0">
                       <Input
-                        className=" border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+                        className="px-2 border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
 
                         disabled={isLoading}
                         placeholder="Simple toggle button using react hooks."

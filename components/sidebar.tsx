@@ -74,7 +74,7 @@ const Sidebar = ({
       flex
       flex-col
       h-full
-      bg-[#111827]
+      bg-[#fcfcfc]
       text-white">
       <div className="
           px-3
@@ -87,21 +87,21 @@ const Sidebar = ({
             <Image fill alt="Logo" src="/logo.png" />
           </div>
           <h1
-            className={cn("text-2xl font-bold ", poppins.className)}>
+            className={cn("text-2xl text-black font-bold ", poppins.className)}>
             Genro_AI
           </h1>
         </Link>
        
         <div
           className="space-y-2 pt-10">
-           <Separator className=" bg-slate-700"/>
+           {/* <Separator className=" bg-slate-300"/> */}
           {routes.map((route) => (
             <Link
               key={route.href} 
               href={route.href}
               className={cn(
-                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition",
-                pathname === route.href ? "text-white bg-white/10" : "text-zinc-400",
+                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-black hover:bg-black/10 rounded-lg transition",
+                pathname === route.href ? "text-black bg-white/10" : "text-zinc-600",
               )}
             >
               <div
@@ -112,7 +112,7 @@ const Sidebar = ({
             </Link>
           ))}
         </div>
-        <Separator className=" bg-slate-700"/>
+        {/* <Separator className=" bg-slate-300"/> */}
       </div>
       
     </div>

@@ -39,14 +39,16 @@ const ImagePage = () => {
 
   return (
     <div>
+        <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `/ Image `}</span>
+       <Separator className="px-4 mb-4 py-[0.07rem]"/>
       <Heading
         title="Image Generations"
-        description="Turning your promp into image."
+        description="Turn your promp into image."
         icon={ImageIcon}
         iconColor="text-pink-700"
         bgColor="bg-pink-700/10"
       />
-      <Separator className="mb-4 py-[0.05rem]" />
+     
       <div className=" px-4 lg:px-8">
         <Form {...form}>
           <form
@@ -59,7 +61,9 @@ const ImagePage = () => {
                 <FormItem className=" col-span-12 lg:col-span-6">
                   <FormControl className=" m-0 p-0">
                     <Input
-                      className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+                      className="
+                      px-2
+                      border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                       disabled={isLoading}
                       placeholder="A picture of a horse in Swiss alps"
                       {...field}
