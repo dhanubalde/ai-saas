@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import Heading from "@/components/heading"
 import { ImageIcon } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -68,7 +68,8 @@ const ImagePage = () => {
                       placeholder="A picture of a horse in Swiss alps"
                       {...field}
                     />
-                    </FormControl>
+                  </FormControl>
+                  <FormMessage className="px-2"/>
                 </FormItem>
             )}
             />

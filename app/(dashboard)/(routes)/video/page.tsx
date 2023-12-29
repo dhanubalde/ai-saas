@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Separator } from "@/components/ui/separator"
 import Heading from "@/components/heading"
 import { FileAudio, FileVideo } from "lucide-react"
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Loader from "@/components/loader"
@@ -79,6 +79,7 @@ const VedioPage = () => {
                       {...field}
                     />
                   </FormControl>
+                  <FormMessage className="px-2"/>
                 </FormItem>
               )}
             

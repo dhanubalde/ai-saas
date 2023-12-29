@@ -11,7 +11,7 @@ import * as z from "zod"
 
 import Heading from "@/components/heading"
 import { Code } from "lucide-react"
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
@@ -91,6 +91,7 @@ const CodePage = () => {
                         {...field}
                       />
                     </FormControl>
+                    <FormMessage className="px-2"/>
                   </FormItem>
                 )}
               />
