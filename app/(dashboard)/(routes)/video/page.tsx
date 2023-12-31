@@ -93,9 +93,11 @@ const VedioPage = () => {
         
       </div>
       <div className=' space-y-4 mt-4'>
-          <div className=' rounded-lg border border-neutral-500 w-full h-[30rem]'>
-          <h3 className=' p-2 text-muted-foreground text-xs'>Response...</h3>
-          </div>
+      {video.length === 0 && !isLoading && (
+               <div className=' rounded-lg border border-neutral-200 w-full h-[30rem]'>
+                  <Empty label="No videos generated..."/>
+               </div>
+          )}
         </div>
       </div>
     </div>

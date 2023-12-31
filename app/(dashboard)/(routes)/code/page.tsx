@@ -15,6 +15,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "@/component
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { Empty } from "@/components/empty"
 
 
 
@@ -35,18 +36,6 @@ const CodePage = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => { 
     console.log(values);
     
-    
-    // try {
-   
-    // } catch (error: any) {
-    //   if (error?.response?.status === 403) {
-    //     proModal.onOpen()
-    //   } else {
-    //     toast.error("Something went wrong.")
-    //   }
-    // } finally { 
-    //   router.refresh()
-    // }
   }
 
   return (
@@ -108,9 +97,12 @@ const CodePage = () => {
           </Form>
         </div>
         <div className=' space-y-4 mt-4'>
-         <div className=' rounded-lg border border-neutral-500 w-full h-[30rem]'>
-         <h3 className=' p-2 text-muted-foreground text-xs'>Response...</h3>
-         </div>
+
+        {messages.length === 0 && !isLoading && (
+               <div className=' rounded-lg border border-neutral-200 w-full h-[30rem]'>
+                  <Empty label="No code generated..."/>
+               </div>
+          )}
        </div>
       </div>
     </div>

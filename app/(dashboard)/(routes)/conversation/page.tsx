@@ -17,6 +17,7 @@ import { useProModal } from '@/hooks/use-proModal'
 import { ChatCompletionRequestMessage } from 'openai'
 import { Separator } from '@/components/ui/separator'
 import { formSchema } from './contants'
+import { Empty } from '@/components/empty'
 
 
 
@@ -139,9 +140,11 @@ const ConversationPage = () => {
         </div>
         <div className=' space-y-4 mt-4'>
          
-          <div className=' rounded-lg border border-neutral-500 w-full h-[30rem]'>
-          <h3 className=' p-2 text-muted-foreground text-xs'>Response...</h3>
-          </div>
+        {messages.length === 0 && !isLoading && (
+               <div className=' rounded-lg border border-neutral-200 w-full h-[30rem]'>
+                  <Empty label="No conversation started..."/>
+               </div>
+          )}
         </div>
       </div>
     </div>

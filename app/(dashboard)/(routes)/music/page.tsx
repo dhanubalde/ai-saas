@@ -13,11 +13,13 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Heading from "@/components/heading"
 import { Music } from "lucide-react"
+import { useState } from "react"
+import { Empty } from "@/components/empty"
 
 const MusicPage = () => {
   const router = useRouter()
   const proModal = useProModal()
-
+  const [music, setMusic] = useState<string[]>([])
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -87,9 +89,11 @@ const MusicPage = () => {
       </Form>
     </div>
     <div className=' space-y-4 mt-4'>
-         <div className=' rounded-lg border border-neutral-500 w-full h-[30rem]'>
-         <h3 className=' p-2 text-muted-foreground text-xs'>Response...</h3>
-         </div>
+    {music.length === 0 && !isLoading && (
+               <div className=' rounded-lg border border-neutral-200 w-full h-[30rem]'>
+                  <Empty label="No musics generated..."/>
+               </div>
+          )}
       </div>
     </div>
   </div>

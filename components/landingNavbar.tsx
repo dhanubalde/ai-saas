@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { useAuth } from "@clerk/nextjs"
+import Image from "next/image"
 
 
 
@@ -16,7 +17,6 @@ const LandingNavbar = () => {
     <nav className="p-4 bg-transparent flex items-center justify-between">
      
       <Link href="/" className="flex items-center ">
-       
         <h1 className={cn("text-2xl font-bold text-white") }>
           Genro_AI
         </h1>
