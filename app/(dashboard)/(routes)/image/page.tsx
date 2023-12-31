@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Empty } from "@/components/empty"
+import Loader from "@/components/loader"
 
 
 const ImagePage = () => {
@@ -144,7 +145,13 @@ const ImagePage = () => {
         </Form>
       </div>
         <div className=' space-y-4 mt-4'>
-          
+           
+        {isLoading && (
+            <div className='p-8 rounded-lg w-full flex items-center justify-center bg-muted'>
+                <Loader/>
+            </div>
+          )}
+
           {photos.length === 0 && !isLoading && (
                <div className=' rounded-lg border border-neutral-200 w-full h-[30rem]'>
                   <Empty label="No photos generated..."/>

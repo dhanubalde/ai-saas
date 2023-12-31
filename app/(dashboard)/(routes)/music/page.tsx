@@ -15,6 +15,7 @@ import Heading from "@/components/heading"
 import { Music } from "lucide-react"
 import { useState } from "react"
 import { Empty } from "@/components/empty"
+import Loader from "@/components/loader"
 
 const MusicPage = () => {
   const router = useRouter()
@@ -88,8 +89,16 @@ const MusicPage = () => {
         </form>
       </Form>
     </div>
-    <div className=' space-y-4 mt-4'>
-    {music.length === 0 && !isLoading && (
+        <div className=' space-y-4 mt-4'>
+          
+     
+        {isLoading && (
+            <div className='p-8 rounded-lg w-full flex items-center justify-center bg-muted'>
+                <Loader/>
+            </div>
+          )}
+
+          {music.length === 0 && !isLoading && (
                <div className=' rounded-lg border border-neutral-200 w-full h-[30rem]'>
                   <Empty label="No musics generated..."/>
                </div>

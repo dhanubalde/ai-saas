@@ -18,7 +18,7 @@ const LandingNavbar = () => {
      
       <Link href="/" className="flex items-center ">
         <h1 className={cn("text-2xl font-bold text-white") }>
-          Genro_AI
+          GenAI
         </h1>
       </Link>
       <div className="flex items-center gap-x-2">

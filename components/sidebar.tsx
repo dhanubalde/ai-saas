@@ -88,7 +88,7 @@ const Sidebar = ({
           </div>
           <h1
             className={cn("text-2xl text-black font-bold ", poppins.className)}>
-            Genro_AI
+            GenAI
           </h1>
         </Link>
        

@@ -18,6 +18,7 @@ import { ChatCompletionRequestMessage } from 'openai'
 import { Separator } from '@/components/ui/separator'
 import { formSchema } from './contants'
 import { Empty } from '@/components/empty'
+import Loader from '@/components/loader'
 
 
 
@@ -140,6 +141,11 @@ const ConversationPage = () => {
         </div>
         <div className=' space-y-4 mt-4'>
          
+          {isLoading && (
+            <div className='p-8 rounded-lg w-full flex items-center justify-center bg-muted'>
+                <Loader/>
+            </div>
+          )}
         {messages.length === 0 && !isLoading && (
                <div className=' rounded-lg border border-neutral-200 w-full h-[30rem]'>
                   <Empty label="No conversation started..."/>

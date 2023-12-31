@@ -14,7 +14,7 @@ interface SubscriptionButtonProps {
 }
 
 const SubscriptionButton = ({
-  isPro = false
+  isPro
 }: SubscriptionButtonProps) => {
   const [loading, SetLoading] = useState(false);
 
