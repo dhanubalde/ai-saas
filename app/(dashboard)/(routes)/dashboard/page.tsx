@@ -1,4 +1,3 @@
-
 "use client"
 import { Card } from "@/components/ui/card"
 import { tools } from "@/constant"
@@ -7,8 +6,9 @@ import { ArrowRight } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 
-const DashboardPage =  () => {
+const DashboardPage = () => {
   const router = useRouter()
+
 
   return (
     <div>
