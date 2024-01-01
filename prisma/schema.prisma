@@ -16,6 +16,8 @@ model UserApiLimit {
   updatedAt DateTime @updatedAt
 }
 
+
+
 model UserSubscription {
   id        String      @id @default(cuid())
   userId    String   @unique

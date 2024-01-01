@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Separator } from "./ui/separator";
+import { FreeCounter } from "./free-counter";
 
 
 const poppins = Montserrat ({ weight: '600', subsets: ['latin'] });
@@ -56,14 +57,16 @@ const routes = [
 ];
 
 interface SidebarProps { 
-  isPro: boolean;
-  apiLimitCount: number;
+ 
 }
 
-const Sidebar = ({
+export const Sidebar = ({
   apiLimitCount = 0,
   isPro = false
-}: SidebarProps) => {
+}: {
+  isPro: boolean;
+  apiLimitCount: number | undefined;
+}) => {
 
   const pathname = usePathname()
 
@@ -114,7 +117,10 @@ const Sidebar = ({
         </div>
         {/* <Separator className=" bg-slate-300"/> */}
       </div>
-      
+      <FreeCounter 
+        apiLimitCount={apiLimitCount} 
+        isPro={isPro}
+      />
     </div>
   )
 }

@@ -4,6 +4,8 @@ import { useAuth } from "@clerk/nextjs"
 import Link from "next/link";
 import TypewriterComponent from "typewriter-effect";
 import { Button } from "./ui/button";
+import LandingContent from "./landing-content";
+
 
 const LangdingHero = () => {
 
@@ -11,6 +13,8 @@ const LangdingHero = () => {
   
 
   return (
+    <>
+   
     <div className="px-4 text-white font-bold py-36 text-center space-y-5">
       <div className=" text-4xl sm:text-6xl md:text-6xl lg:text-7xl space-y-5 font-extrabold">
       <h1 className="">
@@ -45,7 +49,11 @@ const LangdingHero = () => {
       <div className="text-zinc-400 text-xs md:text-sm font-normal">
         No credit card required.
       </div>
-    </div>
+      </div>
+      <div className="py-[8rem]">
+        <LandingContent/>
+      </div>
+      </>
   ) 
 }
 

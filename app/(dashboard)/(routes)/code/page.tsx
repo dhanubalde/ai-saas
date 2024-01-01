@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form"
 import { formSchema } from "./constant"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-
+import  ReactMarkdown from "react-markdown"
 import Heading from "@/components/heading"
 import { Code } from "lucide-react"
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
@@ -17,6 +17,11 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Empty } from "@/components/empty"
 import Loader from "@/components/loader"
+import axios from "axios"
+import { toast } from "react-hot-toast"
+import { UserAvatar } from "@/components/user-avatar"
+import { BotAvatar } from "@/components/bot-avatar"
+import { cn } from "@/lib/utils"
 
 
 
@@ -35,7 +40,29 @@ const CodePage = () => {
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => { 
-    console.log(values);
+    try {
+      const userMessage: ChatCompletionRequestMessage = {
+        role: "user",
+        content: values.prompt
+      };
+      const newMessages = [...messages, userMessage];
+      const response = await axios.post('/api/code', {
+        messages: newMessages
+      });
+
+      setMessages((current) => [...current, userMessage, response.data])
+
+      form.reset()
+
+    } catch (error: any) {
+      if (error?.response?.status === 403) {
+        proModal.onOpen()
+      } else {
+        toast.error("Something went wrong.")
+      }
+    } finally { 
+      router.refresh()
+    }
     
   }
 
@@ -97,20 +124,41 @@ const CodePage = () => {
             </form>
           </Form>
         </div>
-        <div className=' space-y-4 mt-4'>
-         
-        {isLoading && (
-            <div className='p-8 rounded-lg w-full flex items-center justify-center bg-muted'>
-                <Loader/>
+        <div className="space-y-4 mt-4">
+          {isLoading && (
+            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+              <Loader />
             </div>
           )}
-          
-        {messages.length === 0 && !isLoading && (
-               <div className=' rounded-lg border border-neutral-200 w-full h-[30rem]'>
-                  <Empty label="No code generated..."/>
-               </div>
+          {messages.length === 0 && !isLoading && (
+            <Empty label="No conversation started." />
           )}
-       </div>
+          <div className="flex flex-col-reverse gap-y-4">
+            {messages.map((message) => (
+              <div 
+                key={message.content} 
+                className={cn(
+                  "p-8 w-full flex items-start gap-x-8 rounded-lg",
+                  message.role === "user" ? "bg-white border border-black/10" : "bg-muted",
+                )}
+              >
+                {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
+                <ReactMarkdown components={{
+                  pre: ({ node, ...props }) => (
+                    <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                      <pre {...props} />
+                    </div>
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="bg-black/10 rounded-lg p-1" {...props} />
+                  )
+                }} className="text-sm overflow-hidden leading-7">
+                  {message.content || ""}
+                </ReactMarkdown>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )
