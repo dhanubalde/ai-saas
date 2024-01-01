@@ -16,6 +16,8 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Empty } from "@/components/empty"
 import Loader from "@/components/loader"
+import { toast } from "@/components/ui/use-toast"
+
 
 
 const ImagePage = () => {
@@ -35,8 +37,25 @@ const ImagePage = () => {
   const isLoading = form.formState.isSubmitting;
 
   const onsubmit = async (values: z.infer<typeof formSchema>) => { 
+    try {
       console.log(values);
-      
+      if (values) { 
+
+        return toast({
+          variant: "default",
+          title: "GenAi v.2.0",
+          description: `Not available right now. Under maintenance`
+        })
+      }
+    } catch (error: any) {
+      toast({
+        title: `Oops !`,
+        variant: "destructive",
+        description: "Something went wrong"
+      })
+    } finally { 
+      router.refresh()
+    }
   }
 
   return (

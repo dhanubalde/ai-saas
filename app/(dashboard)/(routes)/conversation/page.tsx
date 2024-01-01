@@ -12,7 +12,6 @@ import axios from "axios"
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { toast } from 'sonner'
 import { useProModal } from '@/hooks/use-proModal'
 import { ChatCompletionRequestMessage } from 'openai'
 import { Separator } from '@/components/ui/separator'
@@ -22,11 +21,14 @@ import Loader from '@/components/loader'
 import { cn } from '@/lib/utils'
 import { UserAvatar } from '@/components/user-avatar'
 import { BotAvatar } from '@/components/bot-avatar'
+import { toast } from '@/components/ui/use-toast'
+
+
 
 
 
 const ConversationPage = () => {
-
+  const [date, setDate] = React.useState<Date[]>()
   const router = useRouter()
   const proModal = useProModal()
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
@@ -46,7 +48,25 @@ const ConversationPage = () => {
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => { 
-    console.log(values);
+    try {
+      console.log(values);
+      if (values) { 
+
+        return toast({
+          variant: "default",
+          title: "GenAi v.2.0",
+          description: `Not available right now. Under maintenance`
+        })
+      }
+    } catch (error: any) {
+      toast({
+        title: `Oops !`,
+        variant: "destructive",
+        description: "Something went wrong"
+      })
+    } finally { 
+      router.refresh()
+    }
     
     // try {
 

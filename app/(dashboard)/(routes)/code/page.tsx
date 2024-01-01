@@ -18,10 +18,10 @@ import { Separator } from "@/components/ui/separator"
 import { Empty } from "@/components/empty"
 import Loader from "@/components/loader"
 import axios from "axios"
-import { toast } from "react-hot-toast"
 import { UserAvatar } from "@/components/user-avatar"
 import { BotAvatar } from "@/components/bot-avatar"
 import { cn } from "@/lib/utils"
+import { toast } from "@/components/ui/use-toast"
 
 
 
@@ -40,8 +40,25 @@ const CodePage = () => {
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => { 
-    console.log(values);
-    
+    try {
+      console.log(values);
+      if (values) { 
+
+        return toast({
+          variant: "default",
+          title: "GenAi v.2.0",
+          description: `Not available right now. Under maintenance`
+        })
+      }
+    } catch (error: any) {
+      toast({
+        title: `Oops !`,
+        variant: "destructive",
+        description: "Something went wrong"
+      })
+    } finally { 
+      router.refresh()
+    }
     // try {
     //   const userMessage: ChatCompletionRequestMessage = {
     //     role: "user",

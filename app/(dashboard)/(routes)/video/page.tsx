@@ -15,6 +15,8 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Loader from "@/components/loader"
 import { Empty } from "@/components/empty"
+import { toast } from "@/components/ui/use-toast"
+
 
 
 
@@ -36,7 +38,25 @@ const VedioPage = () => {
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => { 
-    console.log(values);
+    try {
+      console.log(values);
+      if (values) { 
+
+        return toast({
+          variant: "default",
+          title: "GenAi v.2.0",
+          description: `Not available right now. Under maintenance`
+        })
+      }
+    } catch (error: any) {
+      toast({
+        title: `Oops !`,
+        variant: "destructive",
+        description: "Something went wrong"
+      })
+    } finally { 
+      router.refresh()
+    }
   }
 
 
