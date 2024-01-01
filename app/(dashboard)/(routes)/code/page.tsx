@@ -40,29 +40,31 @@ const CodePage = () => {
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => { 
-    try {
-      const userMessage: ChatCompletionRequestMessage = {
-        role: "user",
-        content: values.prompt
-      };
-      const newMessages = [...messages, userMessage];
-      const response = await axios.post('/api/code', {
-        messages: newMessages
-      });
+    console.log(values);
+    
+    // try {
+    //   const userMessage: ChatCompletionRequestMessage = {
+    //     role: "user",
+    //     content: values.prompt
+    //   };
+    //   const newMessages = [...messages, userMessage];
+    //   const response = await axios.post('/api/code', {
+    //     messages: newMessages
+    //   });
 
-      setMessages((current) => [...current, userMessage, response.data])
+    //   setMessages((current) => [...current, userMessage, response.data])
 
-      form.reset()
+    //   form.reset()
 
-    } catch (error: any) {
-      if (error?.response?.status === 403) {
-        proModal.onOpen()
-      } else {
-        toast.error("Something went wrong.")
-      }
-    } finally { 
-      router.refresh()
-    }
+    // } catch (error: any) {
+    //   if (error?.response?.status === 403) {
+    //     proModal.onOpen()
+    //   } else {
+    //     toast.error("Something went wrong.")
+    //   }
+    // } finally { 
+    //   router.refresh()
+    // }
     
   }
 
