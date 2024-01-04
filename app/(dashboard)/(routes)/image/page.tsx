@@ -42,22 +42,22 @@ const ImagePage = () => {
   const onsubmit = async (values: z.infer<typeof formSchema>) => { 
     try {
       console.log(values);
-    //   if (values) { 
+      if (values) { 
 
-    //     return toast({
-    //       variant: "default",
-    //       title: "GenAi v.2.0",
-    //       description: `Not available right now. Under maintenance`
-    //     })
-    //   }
+        return toast({
+          variant: "default",
+          title: "GenAi v.2.0",
+          description: `Not available right now. Under maintenance`
+        })
+      }
       
-    setPhotos([]);
+    // setPhotos([]);
 
-      const response = await axios.post('/api/image', values);
+    //   const response = await axios.post('/api/image', values);
 
-      const urls = response.data.map((image: { url: string }) => image.url);
+    //   const urls = response.data.map((image: { url: string }) => image.url);
 
-      setPhotos(urls);
+    //   setPhotos(urls);
       
     } catch (error: any) {
       toast({
