@@ -8,7 +8,7 @@ import * as z from "zod"
 import { amountOptions, formSchema, resolutionOptions } from "./constant"
 import { zodResolver } from "@hookform/resolvers/zod"
 import Heading from "@/components/heading"
-import { ImageIcon } from "lucide-react"
+import { Download, ImageIcon } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
@@ -17,6 +17,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Empty } from "@/components/empty"
 import Loader from "@/components/loader"
 import { toast } from "@/components/ui/use-toast"
+import axios from "axios"
+import { Card, CardFooter } from "@/components/ui/card"
+import Image from "next/image"
 
 
 
@@ -39,14 +42,23 @@ const ImagePage = () => {
   const onsubmit = async (values: z.infer<typeof formSchema>) => { 
     try {
       console.log(values);
-      if (values) { 
+    //   if (values) { 
 
-        return toast({
-          variant: "default",
-          title: "GenAi v.2.0",
-          description: `Not available right now. Under maintenance`
-        })
-      }
+    //     return toast({
+    //       variant: "default",
+    //       title: "GenAi v.2.0",
+    //       description: `Not available right now. Under maintenance`
+    //     })
+    //   }
+      
+    setPhotos([]);
+
+      const response = await axios.post('/api/image', values);
+
+      const urls = response.data.map((image: { url: string }) => image.url);
+
+      setPhotos(urls);
+      
     } catch (error: any) {
       toast({
         title: `Oops !`,
@@ -176,7 +188,25 @@ const ImagePage = () => {
                   <Empty label="No photos generated..."/>
                </div>
           )}
-       
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8">
+          {photos.map((src) => (
+            <Card key={src} className="rounded-lg overflow-hidden">
+              <div className="relative aspect-square">
+                <Image
+                  fill
+                  alt="Generated"
+                  src={src}
+                />
+              </div>
+              <CardFooter className="p-2">
+                <Button onClick={() => window.open(src)} variant="secondary" className="w-full">
+                  <Download className="h-4 w-4 mr-2" />
+                  Download
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
         </div>
         </div>
     </div>
