@@ -41,7 +41,6 @@ const ImagePage = () => {
 
   const onsubmit = async (values: z.infer<typeof formSchema>) => { 
     try {
-      console.log(values);
       if (values) { 
 
         return toast({

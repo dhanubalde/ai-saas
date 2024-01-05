@@ -19,6 +19,7 @@ const ProModal = () => {
   const proModal = useProModal()
   const [loading,setLoading] = useState(false)
 
+  
   const onSubscribe = async () => { 
     try {
       setLoading(true)
@@ -33,12 +34,13 @@ const ProModal = () => {
   }
 
   return (
+   
     <Dialog open={proModal.isOpen} onOpenChange={proModal.onClosed}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle className=" flex justify-center items-center flex-col gap-y-4 pb-2">
             <div className=" flex items-center gap-x-2 font-bold text-xl">
-              Upgrade to Genro
+              Upgrade to GenAI
               <Badge className=" uppercase text-sm py-1">
                 Pro
               </Badge>
@@ -72,7 +74,8 @@ const ProModal = () => {
           </Button>
         </DialogFooter>
       </DialogContent>
-    </Dialog>
+      </Dialog>
+  
   )
 }
 

@@ -17,12 +17,13 @@ import { useState } from "react"
 import { Empty } from "@/components/empty"
 import Loader from "@/components/loader"
 import { toast } from "@/components/ui/use-toast"
+import axios from "axios"
 
 
 const MusicPage = () => {
   const router = useRouter()
   const proModal = useProModal()
-  const [music, setMusic] = useState<string[]>([])
+  const [music, setMusic] = useState<string>()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -35,21 +36,35 @@ const MusicPage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => { 
     try {
-      console.log(values);
-      if (values) { 
+      // console.log(values);
 
-        return toast({
-          variant: "default",
-          title: "GenAi v.2.0",
-          description: `Not available right now. Under maintenance`
+
+      setMusic(undefined);
+
+      const response = await axios.post('/api/music', values)
+      console.log(response)
+
+      setMusic(response.data.audio);
+      form.reset();
+      // if (values) { 
+
+      //   return toast({
+      //     variant: "default",
+      //     title: "GenAi v.2.0",
+      //     description: `Not available right now. Under maintenance`
+      //   })
+      // }
+    } catch (error: any) {
+      if (error?.response?.status === 403) {
+          proModal.onOpen()
+      } else { 
+        toast({
+          title: `Oops !`,
+          variant: "destructive",
+          description: "Something went wrong"
         })
       }
-    } catch (error: any) {
-      toast({
-        title: `Oops !`,
-        variant: "destructive",
-        description: "Something went wrong"
-      })
+     
     } finally { 
       router.refresh()
     }
@@ -118,11 +133,16 @@ const MusicPage = () => {
             </div>
           )}
 
-          {music.length === 0 && !isLoading && (
+          {!music && !isLoading && (
                <div className=' rounded-lg border border-neutral-200 w-full h-[30rem]'>
                   <Empty label="No musics generated..."/>
                </div>
           )}
+          {music && (
+          <audio controls className="w-full mt-8">
+            <source src={music} />
+          </audio>
+        )}
       </div>
     </div>
   </div>
