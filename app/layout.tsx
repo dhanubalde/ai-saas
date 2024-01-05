@@ -5,6 +5,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { ModalProvider } from '@/components/modal-provider';
 import { ToasterProvider } from '@/components/toaster-provider';
 import { Toaster } from '@/components/ui/toaster';
+import { CrispProvider } from '@/components/crisp-provider';
 
 const font = Montserrat ({ weight: '600', subsets: ['latin'] });
 
@@ -21,7 +22,8 @@ export default async function RootLayout({
 }) {
   return (
     <ClerkProvider>
-    <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning>
+        <CrispProvider/>
         <body className={font.className}>
           <ToasterProvider/>
           <ModalProvider/>
