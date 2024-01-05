@@ -16,6 +16,7 @@
 
 # Build a SaaS AI Platform with Next.js 14, React, Tailwind, Prisma, Stripe
 
+<a href="https://ai-saas-chi-lime.vercel.app/"> Live Demo</a>
 <img src="assets/d3.png" alt="desktop"/>
 
 This is a repository for Build a SaaS AI Platform with Next.js 13, React, Tailwind, Prisma, Stripe
