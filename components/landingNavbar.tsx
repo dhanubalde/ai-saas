@@ -9,6 +9,7 @@ import Image from "next/image"
 
 
 
+
 const LandingNavbar = () => {
   const { isSignedIn } = useAuth()
 
@@ -16,14 +17,18 @@ const LandingNavbar = () => {
   return (
     <nav className="p-4 bg-transparent flex items-center justify-between">
      
-      <Link href="/" className="flex items-center ">
-        <h1 className={cn("text-2xl font-bold text-white") }>
-          GenAI
+      <Link href="/" className="flex items-center">
+        <div className="flex items-center gap-x-2">
+        <Image src="/logo.png" alt="logo" width={42} height={42}/>
+        <h1 className={cn("text-2xl font-bold text-black") }>
+          Genia
         </h1>
+        </div>
+       
       </Link>
       <div className="flex items-center gap-x-2">
         <Link href={isSignedIn ? "/dashboard" : "/sign-in"}>
-          <Button variant="outline" className="rounded-full">
+          <Button className="rounded-full">
             Get Started
           </Button>
         </Link>

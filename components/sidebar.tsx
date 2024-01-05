@@ -76,6 +76,7 @@ export const Sidebar = ({
       py-4 
       flex
       flex-col
+      border
       h-full
       bg-[#fcfcfc]
       text-white">
@@ -86,12 +87,12 @@ export const Sidebar = ({
         <Link
           href="/dashboard"
           className="flex items-center pl-3 flex-1 ">
-          <div className="relative h-8 w-8 mr-4">
+          <div className="relative h-8 w-8 mr-2">
             <Image fill alt="Logo" src="/logo.png" />
           </div>
           <h1
             className={cn("text-2xl text-black font-bold ", poppins.className)}>
-            GenAI
+            Genia AI
           </h1>
         </Link>
        
@@ -103,8 +104,8 @@ export const Sidebar = ({
               key={route.href} 
               href={route.href}
               className={cn(
-                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-black hover:bg-black/10 rounded-lg transition",
-                pathname === route.href ? "text-black bg-white/10" : "text-zinc-600",
+                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-black hover:bg-black/5 rounded-lg transition",
+                pathname === route.href ? "text-black bg-black/5" : "text-zinc-600",
               )}
             >
               <div

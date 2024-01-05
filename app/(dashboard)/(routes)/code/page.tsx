@@ -47,7 +47,7 @@ const CodePage = () => {
         return toast({
           variant: "default",
           title: "GenAi v.2.0",
-          description: `Not available right now. Under maintenance`
+          description: `not available right now. Under maintenance`
         })
       }
     } catch (error: any) {

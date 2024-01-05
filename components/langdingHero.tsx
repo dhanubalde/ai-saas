@@ -15,12 +15,12 @@ const LangdingHero = () => {
   return (
     <>
    
-    <div className="px-4 text-white font-bold py-36 text-center space-y-5">
-      <div className=" text-4xl sm:text-6xl md:text-6xl lg:text-7xl space-y-5 font-extrabold">
+    <div className="px-4 text-neutral-800 font-extrabold py-36 text-center space-y-5">
+      <div className=" text-4xl sm:text-6xl md:text-5xl lg:text-6xl space-y-5 font-extrabold">
       <h1 className="">
         Demand Service Ai Tool 
         </h1> 
-        <div className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+        <div className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
           <TypewriterComponent
             options={{
               strings: [
@@ -28,7 +28,9 @@ const LangdingHero = () => {
                 "Photo Generation",
                 "Blog Writing",
                 "Mail Writing",
-                "Code Sulotions"
+                "Code Generation",
+                "Paraphrasing & Editing",
+                "User-friendly Interface"
               ],
               autoStart: true,
               loop: true
@@ -36,17 +38,17 @@ const LangdingHero = () => {
           />
         </div>
       </div>
-      <div className="text-sm md:text-xl font-light text-zinc-400">
+      <div className="text-sm md:text-xl font-light text-zinc-600">
         Create content using AI 10x faster.
       </div>
       <div>
         <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-          <Button className="md:text-lg p-4 md:p-6 rounded-full font-semibold">
+          <Button variant="premium" className="md:text-lg p-4 md:p-6 rounded-full font-semibold">
             Start Generating For Free
           </Button>
         </Link>
       </div>
-      <div className="text-zinc-400 text-xs md:text-sm font-normal">
+      <div className="text-zinc-600 text-xs md:text-sm font-normal">
         No credit card required.
       </div>
       </div>

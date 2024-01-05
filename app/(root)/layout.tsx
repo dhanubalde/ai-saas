@@ -4,7 +4,7 @@ interface RootlayoutProps {
 
 const layout = ({ children}: RootlayoutProps) => {
   return (
-    <main className="h-full bg-[#111827] overflow-auto">
+    <main className="h-full bg-white bg-gradient-to-r from-purple-200 to-pink-300 overflow-auto">
       <div className=" mx-auto max-w-screen-xl h-full w-full ">
         { children  }
       </div>
