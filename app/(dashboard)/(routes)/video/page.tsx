@@ -44,7 +44,7 @@ const VedioPage = () => {
 
         return toast({
           variant: "default",
-          title: "GenAi v.2.0",
+          title: "Genia AI v.2.0",
           description: `not available right now. Under maintenance`
         })
       }
