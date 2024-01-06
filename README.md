@@ -16,7 +16,7 @@
 
 # Build a SaaS AI Platform with Next.js 14, React, Tailwind, Prisma, Stripe
 
-
+<img src="assets/d4.png" alt="desktop"/>
 
 This is a repository for Build a SaaS AI Platform with Next.js 13, React, Tailwind, Prisma, Stripe
 
