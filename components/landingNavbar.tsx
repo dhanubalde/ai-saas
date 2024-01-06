@@ -20,7 +20,7 @@ const LandingNavbar = () => {
       <Link href="/" className="flex items-center">
         <div className="flex items-center gap-x-2">
         <Image src="/logo.png" alt="logo" width={42} height={42}/>
-        <h1 className={cn("text-2xl font-bold text-black") }>
+        <h1 className={cn("text-2xl font-bold text-white") }>
           Genia
         </h1>
         </div>
@@ -28,7 +28,7 @@ const LandingNavbar = () => {
       </Link>
       <div className="flex items-center gap-x-2">
         <Link href={isSignedIn ? "/dashboard" : "/sign-in"}>
-          <Button className="rounded-full">
+          <Button variant="outline" className="rounded-full">
             Get Started
           </Button>
         </Link>

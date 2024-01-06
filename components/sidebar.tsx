@@ -17,42 +17,43 @@ const routes = [
     label: 'Dashboard',
     icon: LayoutDashboard,
     href: '/dashboard',
-    color: "text-sky-500"
+    color: "text-white"
   },
   {
     label: 'Conversation',
     icon: MessageSquare,
     href: '/conversation',
-    color: "text-violet-500",
+    color: "text-white",
   },
   {
     label: 'Image Generation',
     icon: ImageIcon,
-    color: "text-pink-700",
+    color: "text-white",
     href: '/image',
   },
   {
     label: 'Video Generation',
     icon: VideoIcon,
-    color: "text-orange-700",
+    color: "text-white",
     href: '/video',
   },
   {
     label: 'Music Generation',
     icon: Music,
-    color: "text-emerald-500",
+    color: "text-white",
     href: '/music',
   },
   {
     label: 'Code Generation',
     icon: Code,
-    color: "text-green-700",
+    color: "text-white",
     href: '/code',
   },
   {
     label: 'Settings',
     icon: Settings,
     href: '/settings',
+    color: "text-white"
   },
 ];
 
@@ -76,9 +77,8 @@ export const Sidebar = ({
       py-4 
       flex
       flex-col
-      border
       h-full
-      bg-[#fcfcfc]
+      bg-[#03040a]
       text-white">
       <div className="
           px-3
@@ -91,7 +91,7 @@ export const Sidebar = ({
             <Image fill alt="Logo" src="/logo.png" />
           </div>
           <h1
-            className={cn("text-2xl text-black font-bold ", poppins.className)}>
+            className={cn("text-2xl text-white font-bold ", poppins.className)}>
             Genia AI
           </h1>
         </Link>
@@ -104,13 +104,13 @@ export const Sidebar = ({
               key={route.href} 
               href={route.href}
               className={cn(
-                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-black hover:bg-black/5 rounded-lg transition",
-                pathname === route.href ? "text-black bg-black/5" : "text-zinc-600",
+                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-black/5 rounded-lg transition",
+                pathname === route.href ? "text-white bg-black/5" : "text-zinc-400",
               )}
             >
               <div
-                className="flex items-center flex-1">
-                <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
+                className="flex items-center flex-1 ">
+                <route.icon className={cn("h-6 w- mr-3", route.color)} />
                 {route.label}
               </div>
             </Link>

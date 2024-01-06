@@ -15,7 +15,7 @@ const LangdingHero = () => {
   return (
     <>
    
-    <div className="px-4 text-neutral-800 font-extrabold py-36 text-center space-y-5">
+    <div className="px-4 text-white font-extrabold py-36 text-center space-y-5">
       <div className=" text-4xl sm:text-6xl md:text-5xl lg:text-6xl space-y-5 font-extrabold">
       <h1 className="">
         Demand Service Ai Tool 
@@ -38,7 +38,7 @@ const LangdingHero = () => {
           />
         </div>
       </div>
-      <div className="text-sm md:text-xl font-light text-zinc-600">
+      <div className="text-sm md:text-xl font-light text-zinc-300">
         Create content using AI 10x faster.
       </div>
       <div>
@@ -48,7 +48,7 @@ const LangdingHero = () => {
           </Button>
         </Link>
       </div>
-      <div className="text-zinc-600 text-xs md:text-sm font-normal">
+      <div className="text-zinc-300 text-xs md:text-sm font-normal">
         No credit card required.
       </div>
       </div>
