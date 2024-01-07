@@ -6,6 +6,9 @@ import TypewriterComponent from "typewriter-effect";
 import { Button } from "./ui/button";
 import LandingContent from "./landing-content";
 import { Zap } from "lucide-react";
+import Image from "next/image";
+import Slider from "./slider";
+import Marquee from "react-fast-marquee";
 
 
 const LangdingHero = () => {
@@ -16,8 +19,8 @@ const LangdingHero = () => {
   return (
     <>
    
-    <div className="px-4 text-white font-extrabold py-36 text-center space-y-5">
-      <div className=" text-4xl sm:text-6xl md:text-5xl lg:text-6xl space-y-5 font-extrabold">
+    <div className="px-4 text-white font-extrabold py-32 text-center space-y-5">
+      <div className=" text-4xl sm:text-5xl md:text-5xl lg:text-6xl space-y-5 font-extrabold">
       <h1 className="">
         Fastest <span className=" bg-gradient-to-br from-purple-700 to-pink-500 text-transparent bg-clip-text">Demand</span> Service AI Tool 
         </h1> 
@@ -50,9 +53,15 @@ const LangdingHero = () => {
           </Button>
         </Link>
       </div>
-      <div className="text-zinc-300 text-xs md:text-sm font-normal">
-        No credit card required.
+      <div className="text-zinc-300 text-xs md:text-sm font-normal pt-10">
+          JOIN 100,000+ CREATORS, BRANDS & PUBLISHERS
+          <div className="pt-10">
+            <Marquee gradient={true} gradientColor="#03040a">
+              <Slider/>
+            </Marquee>
+          </div>
       </div>
+        
       </div>
       <div className="py-[8rem]">
         <LandingContent/>
