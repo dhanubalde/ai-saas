@@ -2,11 +2,10 @@
 
 import { cn } from "@/lib/utils";
 import { Montserrat } from 'next/font/google'
-import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
+import { BookTemplateIcon, Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Separator } from "./ui/separator";
 import { FreeCounter } from "./free-counter";
 
 
@@ -17,49 +16,54 @@ const routes = [
     label: 'Dashboard',
     icon: LayoutDashboard,
     href: '/dashboard',
-    color: "text-white"
+    color: "text-sky-500"
   },
+
   {
     label: 'Conversation',
     icon: MessageSquare,
     href: '/conversation',
-    color: "text-white",
+    color: "text-violet-500",
   },
   {
     label: 'Image Generation',
     icon: ImageIcon,
-    color: "text-white",
+    color: "text-rose-500",
     href: '/image',
   },
   {
     label: 'Video Generation',
     icon: VideoIcon,
-    color: "text-white",
+    color: "text-orange-500",
     href: '/video',
   },
   {
     label: 'Music Generation',
     icon: Music,
-    color: "text-white",
+    color: "text-emerald-500",
     href: '/music',
   },
   {
     label: 'Code Generation',
     icon: Code,
-    color: "text-white",
+    color: "text-green-500",
     href: '/code',
   },
   {
-    label: 'Settings',
-    icon: Settings,
-    href: '/settings',
-    color: "text-white"
+    label: 'Templates',
+    icon:   BookTemplateIcon,
+    href: '/template',
+    color: "text-cyan-500",
   },
+  // {
+  //   label: 'Settings',
+  //   icon: Settings,
+  //   href: '/settings',
+  //   color: "text-white"
+  // },
 ];
 
-interface SidebarProps { 
- 
-}
+
 
 export const Sidebar = ({
   apiLimitCount = 0,
@@ -73,7 +77,7 @@ export const Sidebar = ({
 
   return (
     <div className="
-      space-y-4
+      space-y-4 
       py-4 
       flex
       flex-col
@@ -104,13 +108,13 @@ export const Sidebar = ({
               key={route.href} 
               href={route.href}
               className={cn(
-                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-black/5 rounded-lg transition",
-                pathname === route.href ? "text-white bg-black/5" : "text-zinc-400",
+                "text-xs group flex p-2 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-md transition",
+                pathname === route.href ? "text-white bg-white/10" : "text-zinc-200",
               )}
             >
               <div
                 className="flex items-center flex-1 ">
-                <route.icon className={cn("h-6 w- mr-3", route.color)} />
+                <route.icon className={cn("h-6 w-6 mr-3", route.color)} />
                 {route.label}
               </div>
             </Link>

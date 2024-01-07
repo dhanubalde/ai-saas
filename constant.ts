@@ -1,4 +1,4 @@
-import { Code, ImageIcon, MessageSquare, Music, VideoIcon } from "lucide-react";
+import { BookTemplateIcon, Code, ImageIcon, MessageSquare, Music, VideoIcon } from "lucide-react";
 
 export const MAX_FREE_COUNTS = 5;
 
@@ -38,4 +38,12 @@ export const tools = [
     bgColor: "bg-green-700/10",
     href: '/code',
   },
+  {
+    label: 'Template Generation',
+    icon: BookTemplateIcon,
+    color: "text-cyan-500",
+    bgColor: "bg-cyan-500/10",
+    href: '/template',
+  },
+
 ]

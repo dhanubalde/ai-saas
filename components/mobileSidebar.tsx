@@ -8,13 +8,13 @@ import Sidebar from "./sidebar"
 
 interface MobileSidebarProps { 
   isPro: boolean
-  apiLimitCount: number
+  apiLimitCount: number | undefined
 }
 
 const MobileSidebar = ({ 
   isPro = false,
   apiLimitCount = 0
-}) => {
+}: MobileSidebarProps) => {
 
   const [isMounted, setIsMounted] = useState(false);
 
