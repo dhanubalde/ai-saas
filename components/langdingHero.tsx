@@ -5,6 +5,7 @@ import Link from "next/link";
 import TypewriterComponent from "typewriter-effect";
 import { Button } from "./ui/button";
 import LandingContent from "./landing-content";
+import { Zap } from "lucide-react";
 
 
 const LangdingHero = () => {
@@ -18,9 +19,9 @@ const LangdingHero = () => {
     <div className="px-4 text-white font-extrabold py-36 text-center space-y-5">
       <div className=" text-4xl sm:text-6xl md:text-5xl lg:text-6xl space-y-5 font-extrabold">
       <h1 className="">
-        Demand Service Ai Tool 
+        Fastest <span className=" bg-gradient-to-br from-purple-700 to-pink-500 text-transparent bg-clip-text">Demand</span> Service AI Tool 
         </h1> 
-        <div className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+        <div className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-400">
           <TypewriterComponent
             options={{
               strings: [
@@ -44,7 +45,8 @@ const LangdingHero = () => {
       <div>
         <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
           <Button variant="premium" className="md:text-lg p-4 md:p-6 rounded-full font-semibold">
-            Start Generating For Free
+              Start Generating For Free
+              <Zap className="w-6 h-6 ml-2 fill-white" />
           </Button>
         </Link>
       </div>
