@@ -53,7 +53,7 @@ const LangdingHero = () => {
           </Button>
         </Link>
       </div>
-      <div className="text-zinc-300 text-xs md:text-sm font-normal pt-10">
+      <div className="text-zinc-300 text-xs md:text-sm font-normal pt-20">
           JOIN 100,000+ CREATORS, BRANDS & PUBLISHERS
           <div className="pt-10">
             <Marquee gradient={true} gradientColor="#03040a">
@@ -61,7 +61,6 @@ const LangdingHero = () => {
             </Marquee>
           </div>
       </div>
-        
       </div>
       <div className="py-[8rem]">
         <LandingContent/>
