@@ -46,7 +46,7 @@ const ImagePage = () => {
         return toast({
           variant: "default",
           title: "Genia AI v.2.0",
-          description: `not available right now. Under maintenance`
+          description: `not available right now.`
         })
       }
       

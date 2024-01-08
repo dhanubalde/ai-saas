@@ -39,21 +39,21 @@ const MusicPage = () => {
       // console.log(values);
 
 
-      setMusic(undefined);
+      // setMusic(undefined);
 
-      const response = await axios.post('/api/music', values)
-      console.log(response)
+      // const response = await axios.post('/api/music', values)
+      // console.log(response)
 
-      setMusic(response.data.audio);
-      form.reset();
-      // if (values) { 
+      // setMusic(response.data.audio);
+      // form.reset();
+      if (values) { 
 
-      //   return toast({
-      //     variant: "default",
-      //     title: "GenAi v.2.0",
-      //     description: `Not available right now. Under maintenance`
-      //   })
-      // }
+        return toast({
+          variant: "default",
+          title: "GenAi v.2.0",
+          description: `not available right now.`
+        })
+      }
     } catch (error: any) {
       if (error?.response?.status === 403) {
           proModal.onOpen()
@@ -76,7 +76,7 @@ const MusicPage = () => {
   return (
     <div>
        <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `/ Music `}</span>
-      <Separator className="px-4 mb-4 py-[0.07rem]" />
+      <Separator className="px-4 mb-4 py-[0.01rem]" />
       <Heading
         title="Music Generations"
         description="Turn your prompt into music."
