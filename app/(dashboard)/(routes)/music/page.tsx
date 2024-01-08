@@ -47,7 +47,12 @@ const MusicPage = () => {
       // setMusic(response.data.audio);
       // form.reset();
       if (values) { 
-        return proModal.onOpen()
+
+        return toast({
+          variant: "default",
+          title: "GenAi v.2.0",
+          description: `not available right now.`
+        })
       }
     } catch (error: any) {
       if (error?.response?.status === 403) {
