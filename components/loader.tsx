@@ -8,7 +8,7 @@ const Loader = () => {
         <Image src="/load.png" alt="logo" fill/>
       </div>
       <p className="text-md text-muted-foreground">
-        GenAI is thinking 💭...
+        GenAI is thinking...
         
       </p>
     </div>

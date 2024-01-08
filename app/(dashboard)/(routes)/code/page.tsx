@@ -87,8 +87,8 @@ const CodePage = () => {
 
   return (
     <div>
-       <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `/ Code `}</span>
-       <Separator className="px-4 mb-4 py-[0.07rem]"/>
+       <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `> Code `}</span>
+       <Separator className="px-4 mb-4 py-[0.01rem]"/>
       <Heading
         title="Code Generations"
         description="Generate code using descriptive text."
@@ -145,7 +145,7 @@ const CodePage = () => {
         </div>
         <div className="space-y-4 mt-4">
           {isLoading && (
-            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-transfarent">
               <Loader />
             </div>
           )}

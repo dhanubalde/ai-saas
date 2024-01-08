@@ -11,8 +11,8 @@ const Settingpage = async () => {
 
   return (
     <div>
-      <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `/ Settings `}</span>
-      <Separator className="px-4 mb-4 py-[0.07rem]" />
+      <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `> Settings `}</span>
+      <Separator className="px-4 mb-4 py-[0.01rem]" />
       <Heading
         title="Settings"
         description="Manage account settings."

@@ -18,11 +18,7 @@ const Navbar = async () => {
     <div className=" flex items-center p-5 mb-6">
       <MobileSidebar isPro={isPro} apiLimitCount={apiLimitCount}/>
       <div className=" flex w-full justify-end items-center ">
-        <Link href="/settings" className="flex items-center mr-4">
-        <Button variant="ghost" className="rounded-full text-xl" size="icon">
-           <IoSettings/>
-        </Button>
-        </Link>
+        
         <UserButton afterSignOutUrl="/" />
           
       </div>

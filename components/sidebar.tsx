@@ -7,6 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FreeCounter } from "./free-counter";
+import { Button } from "./ui/button";
+import { IoSettings } from "react-icons/io5";
+import { Separator } from "./ui/separator";
 
 
 const poppins = Montserrat ({ weight: '600', subsets: ['latin'] });
@@ -44,13 +47,13 @@ const routes = [
     href: '/music',
   },
   {
-    label: 'Code Generation',
+    label: 'Ai Code',
     icon: Code,
     color: "text-green-500",
     href: '/code',
   },
   {
-    label: 'Templates',
+    label: 'Ai Templates',
     icon:   BookTemplateIcon,
     href: '/template',
     color: "text-cyan-500",
@@ -126,6 +129,14 @@ export const Sidebar = ({
         apiLimitCount={apiLimitCount} 
         isPro={isPro}
       />
+      <div className="flex items-center p-3">
+        <Link href="/settings" className="flex items-center mr-4 gap-x-4 text-sm">
+          <div className="text-xl">
+            <IoSettings/>
+          </div>
+          settings
+        </Link>
+      </div>
     </div>
   )
 }

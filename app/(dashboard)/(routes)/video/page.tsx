@@ -39,13 +39,12 @@ const VedioPage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => { 
     try {
-      console.log(values);
       if (values) { 
 
         return toast({
           variant: "default",
           title: "Genia AI v.2.0",
-          description: `not available right now. Under maintenance`
+          description: `not available right now.`
         })
       }
     } catch (error: any) {
@@ -62,8 +61,8 @@ const VedioPage = () => {
 
   return (
     <div> 
-        <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `/ Video `}</span>
-      <Separator className="px-4 mb-4 py-[0.07rem]" />
+        <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `> Video `}</span>
+      <Separator className="px-4 mb-4 py-[0.01rem]" />
       <Heading
         title="Video Generations"
         description="Turn your prompt into a video"
@@ -116,7 +115,7 @@ const VedioPage = () => {
           
        
         {isLoading && (
-            <div className='p-8 rounded-lg w-full flex items-center justify-center bg-muted'>
+            <div className='p-8 rounded-lg w-full flex items-center justify-center bg-transfarent'>
                 <Loader/>
             </div>
           )}

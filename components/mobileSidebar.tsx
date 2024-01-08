@@ -25,7 +25,6 @@ const MobileSidebar = ({
   if (!isMounted) { 
     return null;
   }
-
   return (
     <Sheet>
       <SheetTrigger>
@@ -45,7 +44,7 @@ const MobileSidebar = ({
           apiLimitCount={apiLimitCount}
         />
       </SheetContent>
-    </Sheet>
+      </Sheet>
   )
 }
 

@@ -17,7 +17,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Empty } from "@/components/empty"
 import Loader from "@/components/loader"
 import { toast } from "@/components/ui/use-toast"
-import axios from "axios"
 import { Card, CardFooter } from "@/components/ui/card"
 import Image from "next/image"
 
@@ -71,8 +70,8 @@ const ImagePage = () => {
 
   return (
     <div>
-        <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `/ Image `}</span>
-       <Separator className="px-4 mb-4 py-[0.07rem]"/>
+        <span className='px-6 lg:px-2 text-xs text-muted-foreground'>{ `> Image `}</span>
+       <Separator className="px-4 mb-4 py-[0.01rem]"/>
       <Heading
         title="Image Generations"
         description="Turn your promp into image."
@@ -177,7 +176,7 @@ const ImagePage = () => {
         <div className=' space-y-4 mt-4'>
            
         {isLoading && (
-            <div className='p-8 rounded-lg w-full flex items-center justify-center bg-muted'>
+            <div className='p-8 rounded-lg w-full flex items-center justify-center bg-transfarent'>
                 <Loader/>
             </div>
           )}

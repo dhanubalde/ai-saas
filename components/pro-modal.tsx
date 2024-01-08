@@ -34,7 +34,6 @@ const ProModal = () => {
   }
 
   return (
-   
     <Dialog open={proModal.isOpen} onOpenChange={proModal.onClosed}>
       <DialogContent>
         <DialogHeader>
@@ -75,7 +74,6 @@ const ProModal = () => {
         </DialogFooter>
       </DialogContent>
       </Dialog>
-  
   )
 }
 
